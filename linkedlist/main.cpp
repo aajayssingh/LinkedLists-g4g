@@ -20,23 +20,23 @@ void insertAfter(node* prev_node, int new_data);
 void append(node** head_ref, int new_data);
 void deleteNode(node** head_ref, int key);
 void deleteNodePos(node** head_ref, int pos);
+int getCountIter(node* head);
+int getCountRec(node* head);
 
 int main()
 {
  /* Start with the empty list */
     node* head = NULL;
-
-   push(&head, 7);
+ /* Use push() to construct below list
+     1->2->1->3->1  */
     push(&head, 1);
     push(&head, 3);
+    push(&head, 1);
     push(&head, 2);
-    push(&head, 8);
+    push(&head, 1);
 
-    puts("Created Linked List: ");
-    printList(head);
-    deleteNodePos(&head, 4);
-    puts("\nLinked List after Deletion at position 4: ");
-    printList(head);
+    /* Check the count function */
+    printf("count of nodes is %d", getCountIter(head));
     return 0;
 }
 
@@ -164,8 +164,16 @@ void deleteNodePos(node** head_ref, int pos)
     }
 }
 
-getCountIter(node* head)
-{}
+int getCountIter(node* head)
+{
+    int count = 0;
+    while(head != NULL)
+    {
+        head = head->next;
+        count++;
+    }
+    return count;
+}
 
-getCountRec(node* head)
+int getCountRec(node* head)
 {}
