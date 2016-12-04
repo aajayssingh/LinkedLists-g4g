@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1480858472 source:/home/ajay/Dropbox/G4G/linkedlist/main.cpp
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+
