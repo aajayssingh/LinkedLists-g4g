@@ -36,7 +36,8 @@ int main()
     push(&head, 1);
 
     /* Check the count function */
-    printf("count of nodes is %d", getCountIter(head));
+    printf("count of nodes is %d \n", getCountIter(head));
+    cout<<"recursive count "<<getCountRec(head)<<endl;
     return 0;
 }
 
@@ -176,4 +177,12 @@ int getCountIter(node* head)
 }
 
 int getCountRec(node* head)
-{}
+{
+    if(head == NULL)
+    {
+        return 0;
+    }
+    else{
+        return 1+getCountRec(head->next);
+    }
+}
